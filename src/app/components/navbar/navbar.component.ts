@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AuthService } from './../../services/auth.service';
 import { MenuItem } from 'primeng/api';
 import { Component, OnInit } from '@angular/core';
@@ -11,7 +12,7 @@ export class NavbarComponent implements OnInit {
   items: MenuItem[];
   user;
 
-  constructor(public authService: AuthService) {}
+  constructor(public authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.authService.GetUser().subscribe((user) => {
@@ -21,5 +22,6 @@ export class NavbarComponent implements OnInit {
 
   Logout() {
     this.authService.Logout();
+    this.router.navigateByUrl('/');
   }
 }
