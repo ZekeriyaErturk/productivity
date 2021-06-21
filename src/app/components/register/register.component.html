@@ -1,0 +1,70 @@
+<div class="p-grid">
+  <div class="p-col-4"></div>
+  <div class="p-col-4 p-mt-4">
+    <p-card header="Kayıt Ol">
+      <ng-template pTemplate="body">
+        <form ngForm="#frm" (ngSubmit)="Register()">
+          <div class="p-fluid">
+            <div class="p-field p-float-label p-mt-4">
+              <input
+                [(ngModel)]="username"
+                id="username"
+                type="text"
+                pInputText
+                name="username"
+              />
+              <label for="username">Kullanici Adi</label>
+            </div>
+            <div class="p-field p-float-label p-mt-4">
+              <input
+                [(ngModel)]="email"
+                id="email"
+                type="text"
+                pInputText
+                name="email"
+              />
+              <label for="email">Email</label>
+            </div>
+            <div class="p-field p-float-label p-mt-4">
+              <input
+                [(ngModel)]="password"
+                name="password"
+                id="password"
+                type="password"
+                pInputText
+              />
+              <label for="password">Şifre</label>
+            </div>
+            <div class="p-field p-float-label p-mt-4">
+              <input
+                id="passwordCheck"
+                type="password"
+                pInputText
+                [(ngModel)]="passwordCheck"
+                name="passwordCheck"
+              />
+              <label for="passwordCheck">Şifre Tekrar</label>
+            </div>
+            <button
+              class="p-mt-2"
+              pButton
+              type="submit"
+              label="Kayıt Ol"
+            ></button>
+          </div>
+        </form>
+      </ng-template>
+      <ng-template pTemplate="footer">
+        <div class="p-text-center p-m-0">
+          <p-button
+            routerLink="/login"
+            label="Giriş Yap"
+            styleClass="p-button-link"
+          ></p-button>
+        </div>
+      </ng-template>
+    </p-card>
+  </div>
+  <div class="p-col-4"></div>
+</div>
+<p-toast positio="top-right"></p-toast>

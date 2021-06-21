@@ -1,0 +1,41 @@
+<div class="p-grid p-mt-4">
+  <div class="p-col-2"></div>
+  <div class="p-col-8">
+    <div class="p-d-flex p-flex-column p-jc-center">
+      <div class="box p-shadow-2">
+        <h2>Pomodoro Zamanlayıcı</h2>
+        <h1 class="timer">
+          {{ this.timer.minutes() | async }}:{{ this.timer.seconds() | async }}
+        </h1>
+        <p>
+          Pomodoro: {{ this.timer.countPomo() | async }} Break:
+          {{ this.timer.countBreak() | async }}
+        </p>
+      </div>
+      <div class="p-d-flex p-jc-center p-mt-3 p-fluid">
+        <button
+          *ngIf="this.timer.handleButton() | async"
+          pButton
+          pRipple
+          type="button"
+          label="Başlat"
+          icon="pi pi-play"
+          class="p-button-raised p-button-lg button p-button-text"
+          (click)="start()"
+        ></button>
+        <button
+          *ngIf="!(this.timer.handleButton() | async)"
+          pButton
+          pRipple
+          type="button"
+          label="Durdur"
+          icon="pi pi-pause"
+          class="p-button-raised p-button-lg button p-button-text"
+          (click)="stop()"
+        ></button>
+      </div>
+      <app-todo-list class="p-mt-6 p-shadow-2"></app-todo-list>
+    </div>
+  </div>
+  <div class="p-col-2"></div>
+</div>

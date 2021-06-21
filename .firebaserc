@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "pomodoro-c8958": {
+      "hosting": {
+        "project": [
+          "pomodoro-c8958"
+        ]
+      }
+    }
+  }
+}

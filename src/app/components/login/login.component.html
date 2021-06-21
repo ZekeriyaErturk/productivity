@@ -1,0 +1,50 @@
+<div class="p-grid">
+  <div class="p-col-4"></div>
+  <div class="p-col-4 p-mt-4">
+    <p-card header="Giriş Yap">
+      <ng-template pTemplate="body">
+        <form ngForm="#frm" (ngSubmit)="Login()">
+          <div class="p-fluid">
+            <div class="p-field p-float-label p-mt-4">
+              <input
+                [(ngModel)]="email"
+                name="email"
+                id="username"
+                type="email"
+                pInputText
+              />
+              <label for="username">Email</label>
+            </div>
+            <div class="p-field p-float-label p-mt-4">
+              <input
+                [(ngModel)]="password"
+                name="password"
+                id="password"
+                type="password"
+                pInputText
+              />
+              <label for="password">Şifre</label>
+            </div>
+            <button
+              class="p-mt-2"
+              pButton
+              type="submit"
+              label="Giriş Yap"
+            ></button>
+          </div>
+        </form>
+      </ng-template>
+      <ng-template pTemplate="footer">
+        <div class="p-text-center p-m-0">
+          <p-button
+            routerLink="/register"
+            label="Kayıt Ol"
+            styleClass="p-button-link"
+          ></p-button>
+        </div>
+      </ng-template>
+    </p-card>
+  </div>
+  <div class="p-col-4"></div>
+</div>
+<p-toast position="top-right"></p-toast>

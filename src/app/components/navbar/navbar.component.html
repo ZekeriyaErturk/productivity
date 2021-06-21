@@ -1,0 +1,70 @@
+<p-toolbar [style]="{ 'background-color': 'var(--blue-500)' }">
+  <div class="p-toolbar-group-left" style="margin: 0">
+    <p routerLink="/" class="p-mr-2 brand">
+      <strong style="color: white">Pomodoro</strong>
+    </p>
+    <button
+      pButton
+      style="color: white"
+      pRipple
+      type="button"
+      label="Todos"
+      class="p-button-text"
+      *ngIf="authService.AuthState() | async"
+      routerLink="/"
+    ></button>
+    <button
+      style="color: white"
+      pButton
+      pRipple
+      type="button"
+      label="Takvim"
+      class="p-button-text"
+      *ngIf="authService.AuthState() | async"
+      routerLink="/calendar"
+    ></button>
+    <button
+      pButton
+      pRipple
+      type="button"
+      style="color: white"
+      label="Notlar"
+      class="p-button-text"
+      *ngIf="authService.AuthState() | async"
+      routerLink="/notes"
+    ></button>
+  </div>
+  <div class="p-toolbar-group-right" style="margin: 0">
+    <span></span>
+    <button
+      pButton
+      type="button"
+      class="p-button-text"
+      routerLink="/login"
+      label="{{ user?.displayName }}"
+      style="color: white"
+      disabled="true"
+      *ngIf="authService.AuthState() | async"
+    ></button>
+    <button
+      pButton
+      style="color: white"
+      pRipple
+      type="button"
+      label="Oturum Aç"
+      class="p-button-text"
+      routerLink="/login"
+      *ngIf="!(authService.AuthState() | async)"
+    ></button>
+    <button
+      pButton
+      style="color: white"
+      pRipple
+      type="button"
+      label="Oturum Kapat"
+      class="p-button-text"
+      *ngIf="authService.AuthState() | async"
+      (click)="Logout()"
+    ></button>
+  </div>
+</p-toolbar>

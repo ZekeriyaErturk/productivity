@@ -1,0 +1,55 @@
+<p-card>
+  <form (ngSubmit)="onSubmit()">
+    <div class="p-inputgroup">
+      <input
+        name="todo"
+        [(ngModel)]="todo"
+        type="text"
+        pInputText
+        placeholder="Todo"
+      />
+      <button
+        type="submit"
+        pButton
+        pRipple
+        icon="pi pi-plus"
+        styleClass="p-button-success"
+      ></button>
+    </div>
+  </form>
+  <ul *ngFor="let todo of todos">
+    <li>
+      <div class="card p-shadow-2">
+        <div class="p-grid">
+          <div
+            class="p-col-8 todo"
+            [ngClass]="todo.todoDone ? 'done' : 'notdone'"
+            (click)="doneTodo(todo)"
+          >
+            {{ todo.todo }}
+          </div>
+          <div class="p-col-4 p-d-flex p-jc-around">
+            <button
+              pButton
+              pRipple
+              type="button"
+              icon="pi pi-check"
+              class="p-button-rounded p-button-text"
+              (click)="doneTodo(todo)"
+            ></button>
+            <button
+              (click)="deleteTodo(todo)"
+              pButton
+              pRipple
+              type="button"
+              icon="pi pi-times"
+              class="p-button-rounded p-button-danger p-button-text"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</p-card>
+
+<p-toast position="top-right"></p-toast>

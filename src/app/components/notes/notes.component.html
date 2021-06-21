@@ -1,0 +1,40 @@
+<div class="p-grid p-ai-stretch p-m-1">
+  <div class="p-col-3">
+    <ul *ngFor="let note of notes">
+      <li class="card p-shadow-1">
+        <div class="p-grid">
+          <p class="p-col-10" (click)="selectNote(note.id)">
+            {{ note.notBaslik }}
+          </p>
+          <button
+            (click)="deleteNote(note)"
+            pButton
+            pRipple
+            type="button"
+            icon="pi pi-times"
+            class="
+              p-col-2 p-button-rounded p-m-auto p-button-danger p-button-text
+            "
+          ></button>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="p-col-9 p-p-0 rounding">
+    <p-editor
+      name="note"
+      [(ngModel)]="noteIcerik"
+      [style]="{ height: '500px' }"
+      placeholder="Bu bir not"
+    ></p-editor>
+    <button
+      (click)="addNote()"
+      pButton
+      pRipple
+      type="button"
+      icon="pi pi-plus"
+      label="{{ !note?.id ? 'Ekle' : 'Düzenle' }}"
+      class="p-button-raised p-mt-3 p-button-text"
+    ></button>
+  </div>
+</div>

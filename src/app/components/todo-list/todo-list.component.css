@@ -1,0 +1,23 @@
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.todo {
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.card {
+  padding: 0.5rem 0.5rem 0 0.5rem;
+  border-radius: 0.2rem;
+}
+:host {
+  width: 75%;
+  margin: 0 auto;
+}

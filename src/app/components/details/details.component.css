@@ -1,0 +1,23 @@
+.container {
+  height: 100vh;
+}
+
+.box-middle {
+  border-left: 1px solid rgba(0, 0, 0, 0.5);
+  border-right: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  padding: 0.5rem 0.5rem 0 0.5rem;
+  border-radius: 0.2rem;
+}
+
+.rounding {
+  border-radius: 0.2rem;
+  margin-top: 1.5rem;
+}
